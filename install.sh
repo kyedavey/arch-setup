@@ -54,6 +54,17 @@ gsettings set org.gnome.desktop.background picture-uri $BACKGROUND_DEST_PATH
 gsettings set org.gnome.desktop.background picture-uri-dark $BACKGROUND_DEST_PATH
 gsettings set org.gnome.desktop.background picture-options 'zoom'
 
+## Gnome Shell User Theme
+GNOME_CSS_ORG_PATH="$HOME/code/arch-setup/assets/gnome-shell.css"
+GNOME_CSS_DEST_DIR="$HOME/.themes/everforest/gnome-shell"
+GNOME_CSS_DEST_PATH="$BACKGROUND_DEST_DIR/gnome-shell.css"
+
+if [ ! -d "$GNOME_CSS_DEST_DIR" ]; then mkdir -p "$GNOME_CSS_DEST_DIR"; fi
+
+[ ! -f $GNOME_CSS_DEST_PATH ] && cp $GNOME_CSS_ORG_PATH $GNOME_CSS_DEST_PATH
+gnome-extensions enable user-theme@gnome-shell-extensions.gcampax.github.com
+gsettings set org.gnome.shell.extensions.user-theme name "everforest"
+
 ## Set Keybinds
 
 ### Fixed number of workspaces - 6
