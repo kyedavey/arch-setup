@@ -13,7 +13,7 @@ packages=(
     "tldr"
     "fd"
     "fastfetch"
-    "ghostty"
+    "alacritty"
     "zellij"
     "ttf-cascadia-mono-nerd"
     "mise"
@@ -38,6 +38,9 @@ sudo systemctl enable NetworkManager.service
 sudo systemctl enable gdm.service
 
 # Configure Gnome
+
+# Set gnome bar apps
+gsettings set org.gnome.shell favorite-apps "['Alacritty.desktop', 'google-chrome.desktop',  'code.desktop']"
 
 ## Fixed number of workspaces - 6
 gsettings set org.gnome.mutter dynamic-workspaces false
@@ -75,7 +78,7 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "[
 
 # Start a new alacritty window (rather than just switch to the already open one)
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'New Alacritty Window'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command 'ghostty'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command 'alacritty'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding '<Shift><Alt>1'
 
 # Start a new Chrome window (rather than just switch to the already open one)
