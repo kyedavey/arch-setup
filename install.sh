@@ -46,6 +46,12 @@ gsettings set org.gnome.shell favorite-apps "['Alacritty.desktop', 'google-chrom
 gsettings set org.gnome.mutter dynamic-workspaces false
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 6
 
+# Full-screen with title/navigation bar
+gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen "['<Shift>F11']"
+
+# Close Window
+gsettings set org.gnome.desktop.wm.keybindings close "['<Super>w']"
+
 ## Use alt for pinned apps
 gsettings set org.gnome.shell.keybindings switch-to-application-1 "['<Alt>1']"
 gsettings set org.gnome.shell.keybindings switch-to-application-2 "['<Alt>2']"
