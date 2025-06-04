@@ -31,7 +31,7 @@ packages=(
     "lazygit"
 )
 
-echo "$USER ALL=(ALL) NOPASSD: ALL" | sudo tee -a /etc/sudoers
+echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
 # Install all Packages
 for pkg in "${packages[@]}"; do
