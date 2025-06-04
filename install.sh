@@ -57,7 +57,7 @@ gsettings set org.gnome.desktop.background picture-options 'zoom'
 ## Gnome Shell User Theme
 GNOME_CSS_ORG_PATH="$HOME/code/arch-setup/assets/gnome-shell.css"
 GNOME_CSS_DEST_DIR="$HOME/.themes/everforest/gnome-shell"
-GNOME_CSS_DEST_PATH="$BACKGROUND_DEST_DIR/gnome-shell.css"
+GNOME_CSS_DEST_PATH="$GNOME_CSS_DEST_DIR/gnome-shell.css"
 
 if [ ! -d "$GNOME_CSS_DEST_DIR" ]; then mkdir -p "$GNOME_CSS_DEST_DIR"; fi
 
@@ -120,6 +120,7 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 # Dotfiles
 
 mkdir -p ~/.config/alacritty
+mkdir -p ~/.config/zellij
 
 ln -fs ~/code/arch-setup/dotfiles/.bashrc ~/.bashrc
 ln -fs ~/code/arch-setup/dotfiles/.gitconfig ~/.gitconfig
