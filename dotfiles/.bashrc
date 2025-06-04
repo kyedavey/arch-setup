@@ -75,8 +75,8 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[0
 # Initializations
 _have gh && . <(gh completion -s bash)
 _have mise && eval "$(mise activate bash)"
-_have zoxide && eval "$(zoxide init bash)"
 _have starship && eval "$(starship init bash)"
+_have zoxide && eval "$(zoxide init bash)"
 
 if _have fzf; then
   if [[ -f /usr/share/bash-completion/completions/fzf ]]; then
