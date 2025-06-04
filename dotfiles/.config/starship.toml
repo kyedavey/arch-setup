@@ -20,7 +20,7 @@ style = 'orange'
 format = '[@$hostname]($style) '
 
 [directory]
-style = 'green'
+style = 'bold green'
 
 [git_branch]
 style = "orange"
