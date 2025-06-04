@@ -1,7 +1,7 @@
 set -e
 
 # Source the package list
-if [ ! -f "/config/packages.conf" ]; then
+if [ ! -f "config/packages.conf" ]; then
   echo "Error: packages.conf not found!"
   exit 1
 fi
