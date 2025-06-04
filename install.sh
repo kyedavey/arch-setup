@@ -1,40 +1,26 @@
-packages=(
-    # "gnome"
-    # "gnome-tweaks"
-    "cosmic"
-    "power-profiles-daemon"
-    "networkmanager"
-    "bash-completion"
-    "git"
-    "fzf"
-    "ripgrep"
-    "bat"
-    "eza"
-    "zoxide"
-    "plocate"
-    "btop"
-    "tldr"
-    "fd"
-    "fastfetch"
-    "alacritty"
-    "zellij"
-    "ttf-cascadia-mono-nerd"
-    "mise"
-    "neovim"
-    "docker"
-    "github-cli"
-    "starship"
-    # AUR Packages
-    "google-chrome"
-    "visual-studio-code-bin"
-    "lazydocker"
-    "lazygit"
-)
+set -e
 
-echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
+# Source the package list
+if [ ! -f "config/packages.conf" ]; then
+  echo "Error: packages.conf not found!"
+  exit 1
+fi
+
+source config/packages.conf
+
+# Update the system first
+echo "Updating system..."
+sudo pacman -Syu --noconfirm
+
+# Installing paru
+sudo pacman -S --noconfirm --needed base-devel
+git clone https://aur.archlinux.org/paru.git /tmp/paru >/dev/null
+cd /tmp/paru
+makepkg -si --noconfirm
+cd ~
 
 # Install all Packages
-for pkg in "${packages[@]}"; do
+for pkg in "${PKGS[@]}"; do
     paru -S --noconfirm --needed "$pkg"
 done
 
@@ -133,5 +119,3 @@ ln -fs ~/code/arch-setup/dotfiles/.gitconfig ~/.gitconfig
 ln -fs ~/code/arch-setup/dotfiles/.config/starship.toml ~/.config/starship.toml
 ln -fs ~/code/arch-setup/dotfiles/.config/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
 ln -fs ~/code/arch-setup/dotfiles/.config/zellij/config.kdl ~/.config/zellij/config.kdl
-
-sudo sed -i "s/$USER ALL=(ALL) NOPASSWD: ALL//g" /etc/sudoers
