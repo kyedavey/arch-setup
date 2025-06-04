@@ -31,6 +31,8 @@ packages=(
     "lazygit"
 )
 
+echo "$USER ALL=(ALL) NOPASSD: ALL" | sudo tee -a /etc/sudoers
+
 # Install all Packages
 for pkg in "${packages[@]}"; do
     paru -S --noconfirm --needed "$pkg"
@@ -131,3 +133,5 @@ ln -fs ~/code/arch-setup/dotfiles/.gitconfig ~/.gitconfig
 ln -fs ~/code/arch-setup/dotfiles/.config/starship.toml ~/.config/starship.toml
 ln -fs ~/code/arch-setup/dotfiles/.config/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
 ln -fs ~/code/arch-setup/dotfiles/.config/zellij/config.kdl ~/.config/zellij/config.kdl
+
+sudo sed -i "s/$USER ALL=(ALL) NOPASSWD: ALL//g" /etc/sudoers
