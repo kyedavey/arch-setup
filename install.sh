@@ -2,6 +2,7 @@ packages=(
     "gnome"
     "gnome-tweaks"
     "networkmanager"
+    "bash-completion"
     "git"
     "fzf"
     "ripgrep"
