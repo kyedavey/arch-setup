@@ -125,5 +125,6 @@ mkdir -p ~/.config/zellij
 
 ln -fs ~/code/arch-setup/dotfiles/.bashrc ~/.bashrc
 ln -fs ~/code/arch-setup/dotfiles/.gitconfig ~/.gitconfig
+ln -fs ~/code/arch-setup/dotfiles/.config/starship.toml ~/.config/starship.toml
 ln -fs ~/code/arch-setup/dotfiles/.config/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
 ln -fs ~/code/arch-setup/dotfiles/.config/zellij/config.kdl ~/.config/zellij/config.kdl
