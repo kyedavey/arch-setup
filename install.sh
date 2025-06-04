@@ -117,4 +117,11 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ command 'google-chrome'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ binding '<Shift><Alt>2'
 
+# Dotfiles
 
+mkdir -p ~/.config/alacritty
+
+ln -fs ~/code/arch-setup/dotfiles/.bashrc ~/.bashrc
+ln -fs ~/code/arch-setup/dotfiles/.gitconfig ~/.gitconfig
+ln -fs ~/code/arch-setup/dotfiles/.config/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
+ln -fs ~/code/arch-setup/dotfiles/.config/zellij/config.kdl ~/.config/zellij/config.kdl
