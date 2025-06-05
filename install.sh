@@ -27,7 +27,6 @@ done
 # Enable required Services
 sudo systemctl enable NetworkManager.service
 sudo systemctl enable cosmic-greeter.service
-# sudo systemctl enable gdm.service
 
 # Dotfiles
 
