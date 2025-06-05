@@ -1,9 +1,5 @@
 # arch-setup
 
-## Requirements
-
-* Paru
-
 ## Installation
 
 ```bash
