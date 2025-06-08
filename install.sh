@@ -26,7 +26,6 @@ done
 
 # Enable required Services
 sudo systemctl enable NetworkManager.service
-sudo systemctl enable cosmic-greeter.service
 
 # Dotfiles
 
@@ -37,7 +36,8 @@ git clone $DOTFILES_REMOTE $DOTFILES_LOCAL
 
 "$DOTFILES_LOCAL/dotfiles.sh" -f install alacritty
 "$DOTFILES_LOCAL/dotfiles.sh" -f install bash
-"$DOTFILES_LOCAL/dotfiles.sh" -f install cosmic
+"$DOTFILES_LOCAL/dotfiles.sh" -f install hypr 
+"$DOTFILES_LOCAL/dotfiles.sh" -f install waybar
 "$DOTFILES_LOCAL/dotfiles.sh" -f install git
 "$DOTFILES_LOCAL/dotfiles.sh" -f install starship
 "$DOTFILES_LOCAL/dotfiles.sh" -f install zellij
