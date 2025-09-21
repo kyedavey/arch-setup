@@ -24,9 +24,6 @@ for pkg in "${PKGS[@]}"; do
     paru -S --noconfirm --needed "$pkg"
 done
 
-# Enable required Services
-sudo systemctl enable NetworkManager.service
-
 # Dotfiles
 
 DOTFILES_REMOTE="https://github.com/kyedavey/dotfiles"
@@ -40,4 +37,3 @@ git clone $DOTFILES_REMOTE $DOTFILES_LOCAL
 "$DOTFILES_LOCAL/dotfiles.sh" -f install waybar
 "$DOTFILES_LOCAL/dotfiles.sh" -f install git
 "$DOTFILES_LOCAL/dotfiles.sh" -f install starship
-"$DOTFILES_LOCAL/dotfiles.sh" -f install zellij
